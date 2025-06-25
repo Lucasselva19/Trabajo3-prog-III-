@@ -14,30 +14,30 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("boton-filtrar");
-    const filterButton = document.getElementById("boton-filtrar");
-    const inputField = document.getElementById("Filtrado");
-    const resultContainer = document.getElementById("resultado");
+    const botonfiltrar = document.getElementById("boton-filtrar");
+    const busqueda = document.getElementById("Filtrado");
+    const resultado = document.getElementById("resultado");
 
-    const wordsList = ["manzana", "banana", "pera", "durazno", "frutilla", "mango"];
+    const Listadefrutas = ["manzana", "banana", "pera", "durazno", "frutilla", "mango", "kiwi", "naranja", "uva", "sandia", "cereza", "melon"];
     
 
-    filterButton.addEventListener("click", function(event) {
-        event.preventDefault(); // Evita el envío del formulario
+    botonfiltrar.addEventListener("click", function(event) {
+        event.preventDefault();
 
-        const inputText = inputField.value.trim();
+        const inputText = busqueda.value.trim();
         if (inputText === "") {
-            resultContainer.innerText = "Error: Debe ingresar una palabra o parte de ella.";
+            resultado.innerText = "Error: Debe ingresar una palabra o parte de ella.";
             return;
         }
 
-        const filteredWords = wordsList.filter(word => 
+        const filteredWords = Listadefrutas.filter(word => 
             word.toLowerCase().includes(inputText.toLowerCase())
         );
 
         if (filteredWords.length > 0) {
-            resultContainer.innerText = "Palabras filtradas: " + filteredWords.join(", ");
+            resultado.innerText = "Palabras filtradas: " + filteredWords.join(", ");
         } else {
-            resultContainer.innerText = "No se encontraron palabras que coincidan.";
+            resultado.innerText = "No se encontraron palabras que coincidan.";
         }
     });
 });
