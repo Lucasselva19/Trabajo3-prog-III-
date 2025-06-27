@@ -5,19 +5,29 @@ document.addEventListener("DOMContentLoaded", function() {
     const resultado = document.getElementById("resultado");
 
     const Listadefrutas = ["manzana", "banana", "pera", "durazno", "frutilla", "mango", "kiwi", "naranja", "uva", "sandia", "cereza", "melon"];
-    
+
+    botonfiltrar.disabled = true; 
+
+    const validarCampoVacio = () => {
+        if (busqueda.value.trim() === "") {
+            resultado.innerText = "Debe ingresar una palabra o parte de ella.";
+            botonfiltrar.disabled = true;
+            return true;
+        }else {
+            resultado.innerText = "";
+            botonfiltrar.disabled = false;
+        }
+    }
+
+    busqueda.addEventListener("input", validarCampoVacio);
 
     botonfiltrar.addEventListener("click", function(event) {
         event.preventDefault();
 
-        const inputText = busqueda.value.trim();
-        if (inputText === "") {
-            resultado.innerText = "Error: Debe ingresar una palabra o parte de ella.";
-            return;
-        }
+        const textobusqueda = busqueda.value.trim();
 
         const palabrasfiltradas = Listadefrutas.filter(word => 
-            word.toLowerCase().includes(inputText.toLowerCase())
+            word.toLowerCase().includes(textobusqueda.toLowerCase())
         );
 
         if (palabrasfiltradas.length > 0) {
