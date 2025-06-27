@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
         const num2 = parseFloat(document.getElementById("num2").value);
             if (operacionelegida.value === "division" && num2 == 0) {
                 calcular.disabled = true;
-                resultado.innerText = "Error: División por cero no permitida.";
             } else {
                 calcular.disabled = false;
             }
