@@ -29,19 +29,21 @@ function App() {
 
     return (
         <div>
+            <form id="form-calculadoraIMC">
             <input
                 type="number"
                 placeholder="Ingrese su peso (kg)"
                 value={peso}
                 onChange={(e) => setPeso(e.target.value)}
-            />
+                />
             <input
                 type="number"
                 placeholder="Ingrese su altura (cm)"
                 value={altura}
                 onChange={(e) => setAltura(e.target.value)}
-            />
+                />
             <button onClick={calcularIMC}>Calcular IMC</button>
+            </form>
             {indice && (
                 <div style={{ color: color }}>
                     <p>IMC: {indice}</p>

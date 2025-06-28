@@ -56,11 +56,12 @@ function App() {
 
     return (
         <div>
-            <input type="number" value={numero1} onChange={(e) => setNumero1(e.target.value)} />
-            <input type="number" value={numero2} onChange={validarNum2} />
-            <select value={operacion} onChange={validarOperacion}>
-                <option value="suma">Suma</option>
-                <option value="resta">Resta</option>
+            <form id="form-calculadora">
+                <input type="number" value={numero1} onChange={(e) => setNumero1(e.target.value)} />
+                <input type="number" value={numero2} onChange={validarNum2} />
+                <select value={operacion} onChange={validarOperacion}>
+                    <option value="suma">Suma</option>
+                    <option value="resta">Resta</option>
                 <option value="multiplicacion">Multiplicación</option>
                 <option value="division">División</option>
             </select>

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("boton-filtrar");
+    const form = document.getElementById("form-filtrar");
     const botonfiltrar = document.getElementById("boton-filtrar");
     const busqueda = document.getElementById("Filtrado");
     const resultado = document.getElementById("resultado");
@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    busqueda.addEventListener("input", validarCampoVacio);
+    form.addEventListener("input", validarCampoVacio);
 
-    botonfiltrar.addEventListener("click", function(event) {
+    form.addEventListener("submit", function(event) {
         event.preventDefault();
 
         const textobusqueda = busqueda.value.trim();

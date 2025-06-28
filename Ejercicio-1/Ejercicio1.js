@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const form = document.getElementById("calculatorForm");
-    const calcular = document.getElementById("boton-calcular");
+    const form = document.getElementById("form-calculadora");
     const operacionelegida = document.getElementById("operacion");
     const resultado = document.getElementById("resultado");
     const input2 = document.getElementById("num2");
@@ -19,7 +18,8 @@ document.addEventListener("DOMContentLoaded", function() {
     operacionelegida.addEventListener("change", validarDivisionPorCero);
     input2.addEventListener("input", validarDivisionPorCero);
 
-    calcular.addEventListener("click", function() {
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
         const num1 = parseFloat(document.getElementById("num1").value);
         const num2 = parseFloat(document.getElementById("num2").value);
         const operacion = operacionelegida.value;
